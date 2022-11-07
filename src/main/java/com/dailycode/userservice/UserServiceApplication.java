@@ -16,6 +16,6 @@ public class UserServiceApplication {
 	private RestTemplate restTemplate() {
 		
 		return new RestTemplate();
-	};
+	}
 
 }
