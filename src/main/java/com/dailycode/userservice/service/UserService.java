@@ -3,6 +3,7 @@ package com.dailycode.userservice.service;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -36,7 +37,7 @@ public class UserService {
 
             // get Department by RestTemplate
             Department department = restTemplate
-                    .getForObject("http://localhost:9001/v1/departments/"
+                    .getForObject("http://DEPARTMENT-SERVICE/v1/departments/"//http://localhost:9001/v1/departments/
                             + user.getDepartmentId(), Department.class);
             responseTemplateVO.setDepartment(department);
         });
